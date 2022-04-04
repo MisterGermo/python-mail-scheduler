@@ -12,11 +12,19 @@ SES_PORT = 465
 SES_LOGIN = "xxx@xxxx.com"
 SES_PASSWORD = "xxx"
 SENDER_EMAIL = SES_LOGIN
+
+# this is a list of people you want to send emails to
+#   a static / optional list if you want to use it (as a global var)
 LST_RECEIVERS = ['xxx@xxx.com', 'yyyy@yyy.com']
 
 #============================================================================#
 #============================================================================#
 
+# this is just for pure testing function.
+# you can call it like this 'sendEmailTest()'
+#  but you need to set a global SES_RECEIVER = "name@email.com"
+SES_RECEIVER = "name@email.com"
+SES_ADMIN = "fromname@gmail.com"  # <- need this var too
 def sendEmailTest(test_id=-1, dev_msg='nil'):
     funcname = f'({__filename}) sendEmailTest'
     print(funcname)
@@ -28,6 +36,7 @@ def sendEmailTest(test_id=-1, dev_msg='nil'):
     subject = f"server test email [{test_id}]"
     body = f"Server test email body...\n\n\n     dev_msg: {dev_msg}\n\n\n _END_\n\n"
     return sendTextEmail(sender, receivers, subject, body)
+sendEmailTest() # <- this should now work just fine
 
 def email_send_weekly(subj='nil_subj', msg='nil_msg', lst_receivers=[]):
     funcname = f'({__filename}) email_send_weekly'

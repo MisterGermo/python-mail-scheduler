@@ -1,0 +1,34 @@
+###############################
+# eg_010322 (model eg_031921)
+###############################
+## misc OSx
+*~
+.#.*
+\#.gitignore#
+*.DS_Store
+\#.env#
+\#__init__.py#
+__pycache__
+~$*
+\#*#
+
+## xcode workspace
+*.xcworkspace
+
+## hide site security
+#sites/
+
+## hide emebedded repos #
+#house_tools/
+
+## hide logs #
+#logs/
+
+## hide environmentals
+#.env*
+
+## hide legacy helpers
+#_legacy/
+
+## hide flask sessions ##
+#src/flask_session/
